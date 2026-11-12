@@ -1,0 +1,22 @@
+TEACHER PORTAL SETUP (about 5 minutes, one time)
+
+PART 1 - Connect the sheet (this is what lets you see answers automatically)
+1. Go to sheets.google.com and create a blank sheet named "SMHS Teacher Responses".
+2. Open Extensions > Apps Script. Delete the sample code and paste all of apps-script.gs. Save.
+3. Left side: Project Settings (gear) > Script properties > Add property.
+   Name: PIN    Value: a number only you know (for example 482915).
+4. Click Deploy > New deployment > type "Web app".
+   Execute as: Me.   Who has access: Anyone.   Click Deploy and allow access.
+5. Copy the Web app URL (it ends with /exec).
+6. Open teacher-portal.html in a text editor, find the line  const ENDPOINT='';
+   and put the URL between the quotes. Save.
+
+PART 2 - Put it on your site and the menu
+1. Upload teacher-portal.html to the same place as your site's index.html (for example the root of the repository Amplify deploys).
+2. In the menu, add one item:  <a href="/teacher-portal.html">Teacher Portal</a>
+3. Redeploy on Amplify.
+
+USING IT
+- Teachers: menu > Teacher Portal > fill > Submit. No login.
+- You: open  https://hecindia.d3fsh6sxv7qman.amplifyapp.com/teacher-portal.html#coordinator
+  Enter your PIN. New answers appear within 20 seconds. The same data is also in your Google Sheet.
